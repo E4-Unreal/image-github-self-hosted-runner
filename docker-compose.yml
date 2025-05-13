@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  service-name:
+    image: ghcr.io/e4-docker/image-name:latest
+    environment:
+      - TZ
+    restart: unless-stopped
