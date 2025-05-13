@@ -4,11 +4,12 @@ services:
   actions-runner:
     image: ghcr.io/e4-docker/github-self-hosted-runner:latest
     environment:
-      - GITHUB_ORGANIZATION
+      - GITHUB_ORGANIZATION=E4-Unreal
     secrets:
-      - actions_runner_token
+      - source: e4-unreal_self_hosted_runners_token
+        target: actions_runner_token
     restart: unless-stopped
 
 secrets:
-  actions_runner_token:
+  e4-unreal_self_hosted_runners_token:
     external: true
